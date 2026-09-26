@@ -1,0 +1,19 @@
+create database ycapd2;
+use ycapd2;
+CREATE table employees(
+emp_id INT primary key,
+emp_name VARCHAR(30),
+manager_id INT
+);
+select * from employees;
+INSERT INTO employees VALUES
+(1,'chinmay',NULL),
+(2,'patil',1),
+(3,'rushikesh',1),
+(4,'mayank',2);
+SELECT
+e.emp_name  AS Employee,
+m.emp_name AS Manager
+FROM employees e
+LEFT JOIN employees m
+ON e.manager_id = m.emp_id;
